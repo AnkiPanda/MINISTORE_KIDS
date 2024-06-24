@@ -1,0 +1,139 @@
+.confirmOrderContainer{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+}
+.orderInfo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-right: 1px solid rgba(0,0,0,0.125) ;
+}
+.shippingInfo{
+    padding: 3vmax 5vmax;  
+    padding-bottom:1vmax ; 
+}
+.shippingInfo > h2{
+    font: 400 1.8vmax;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 1vmax;
+}
+.shippingInfo > p{
+    font: 300 1.2vmax;
+    margin: 0.2vmax;
+}
+.orderItems {
+    padding: 5vmax;
+    padding-top: 1vmax;
+    margin-top: 0.5vmax ;
+}
+.orderItems > h2{
+    font: 400 1.8vmax;
+    color: rgba(0, 0, 0, 0.6);
+}
+.cartContent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1vmax 2vmax;
+}
+.cartContent > div:first-child{
+    display: flex;
+    align-items: center;
+}
+.cartContent > div:first-child > img{
+    width:5vmax
+}
+.cartContent > div:first-child > a{
+    font: 350 1.3vmax;
+    margin-left: 3vmax;
+    text-decoration: none;
+    cursor: pointer;
+    color:tomato;
+    transition: all 0.5s;
+}
+.cartContent > div:first-child > a:hover{
+    color:rgb(197, 68, 45);
+}
+.cartContent > div:last-child > p{
+    font: 350 1.2vmax;
+    margin-bottom: 0;
+}
+.orderSummary{
+    text-align: center;
+    padding: 3vmax 0;
+   
+}
+
+.orderSummary > h2 {
+    font: 450 2vmax;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    padding: 1.5vmax;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 2vmax;
+}
+.orderSummary > div{
+    width: 75%;
+    margin: auto;
+    /* padding: 0 5vmax; */
+    display: flex;
+    justify-content: space-between;
+}
+/* .orderSummary > div > p{
+    font-size:  1.2vmax ;
+} */
+.orderSummary > div:nth-child(4){
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+    margin-bottom: 2vmax;
+}
+
+ /* .orderSummary > div:nth-child(5) > p > b{
+    font-size: 1.3vmax;  
+}  */
+.orderSummary > button{
+    border: none;
+    background-color: tomato;
+    padding: 0.5vmax;
+    width: 75%;
+    color: white;
+    transition: all 0.5s;
+    cursor: pointer;
+    /* border-radius: 4vmax; */
+    font: 350 1.2vmax;
+    margin-top: 2vmax
+
+}
+.orderSummary > button:hover{
+    background-color: rgb(214, 84, 61);
+}
+@media screen and (max-width: 600px) {
+    .confirmOrderContainer{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px ;
+        text-align: center;
+    }
+    .orderInfo{
+        border-right: none;
+        border-bottom: 1px solid rgba(0,0,0,0.125) ;
+        border-top: 1px solid rgba(0,0,0,0.125) ;
+    }
+    .shippingInfo{
+        margin-bottom: 2vmax;
+    }
+    .orderItems{
+        padding: 1vmax;
+    }
+    .orderItems > h2{
+        font-size: 2.2vmax;
+    }
+    .shippingInfo > h2{
+        font-size: 2.2vmax;
+    }
+    .orderSummary > button{
+        font-size: 1.6vmax;
+    }
+}

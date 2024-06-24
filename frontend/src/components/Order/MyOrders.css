@@ -1,0 +1,105 @@
+.myOrders{
+    padding: 1vmax;
+    min-height: 70vh;
+}
+.myOrders > h2{
+    width: 20%;
+    margin: auto;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    text-align: center;
+    padding: 1vmax;
+    font: 500 2.5vmax;
+    margin-bottom: 2vmax;
+}
+.myOrderDiv{
+    width:70%;
+    margin: auto;
+}
+.myOrderDiv > div {
+    padding: 1.5vmax;
+    border: 1px solid rgba(0,0,0,0.3);
+    margin: 1vmax;
+
+}
+.myOrderDiv > div > div{
+    display: flex;
+    justify-content: space-between;
+}
+.myOrderDiv > div > div:first-child > p{
+    font: 300 1.1vmax "Roboto";
+    /* color: rgb(46, 37, 69); */
+    color: rgba(0,0,0,0.625)
+}
+.myOrderDiv > div > div:first-child > p:last-child{
+    color:green;
+    font-size: 1.3vmax;
+}
+
+.productImageDiv > img{
+    width: 3.5vmax;
+    border: 1px solid rgba(0,0,0,0.225);
+    margin-right: 1vmax;
+    cursor: pointer;
+}
+.productImageDiv > span{
+    padding: 1vmax;
+    border: 1px solid rgba(0,0,0,0.225);  
+    cursor: pointer;
+}
+.detailsPart{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.detailsPart > a{
+   color: tomato;
+   text-decoration: none;
+   font-size:  1vmax;
+   cursor: pointer;
+   transition: all 0.5s;
+}
+.detailsPart > a:hover{
+    color:rgb(197, 68, 45);
+}
+.detailsPart > p{
+    text-align: end;
+    font: 450 1.2vmax;
+}
+.emptyOrder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+  .emptyOrder > svg{
+    font-size: 12vmax;
+  }
+  .emptyOrder > p{
+    margin: 1vmax;
+    font: 500 1.8vmax cursive;
+  }
+  .emptyOrder > a{
+    text-decoration: none;
+    color: tomato;
+    font: 400 1.3vmax "Roboto";
+    cursor:pointer;
+    transition: all 0.5s;
+  }
+  .emptyOrder > a:hover{
+    color: rgb(214, 84, 61);
+  }
+@media screen and (max-width: 600px) {
+    .myOrderDiv{
+        width:95%;
+    }
+    .myOrders > h2{
+        width: 40%
+    }
+    .myOrderDiv > div > div:first-child > p{
+        font-size: 1.5vmax;
+    }
+    .detailsPart > a{
+        font-size: 1.3vmax;
+    }
+}

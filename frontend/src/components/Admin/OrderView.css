@@ -1,0 +1,84 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content-order-view {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    min-width: 90vw;
+    height: 80vh;
+    width: 30%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 3vmax ;
+    overflow: auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    color: tomato;
+    border: none;
+    font-size: 1.3vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+    width:2vmax
+}
+.close-button:hover{
+    color: rgb(214, 84, 61);
+}
+.orderDetailsContent{
+    background-color: white;
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+    margin-top: 2vmax;
+}
+.paymentDiv{
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1.2vmax 0;
+    margin-top: 1.7vmax !important;
+}
+
+@media screen and (max-width: 600px) {
+    .orderDetailsContent{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px ;
+        margin-top: 0px;
+        text-align: center;
+    }
+    .cartContent{
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 10px 5px;
+        padding-top: 0;
+    }
+    .cartContent > div{
+        margin-top: 10px;
+        
+    }
+    .cartContent > div:first-child > a {
+        max-width: 120px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-left: 8px;
+        font-size: 15px;
+    }
+    .cartContent > div:last-child > p {
+        font-size: 13px;
+    }
+    .cartContent > div:first-child > img{
+        width: 36px;
+    }
+}

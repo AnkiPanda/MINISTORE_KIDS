@@ -1,0 +1,11 @@
+.Mui-selected {
+    color: tomato !important;
+}
+.MuiTabs-indicator{
+    background-color: tomato !important;
+
+}
+.MuiTabPanel-root{
+    height: 75vh;
+    overflow: auto;
+}

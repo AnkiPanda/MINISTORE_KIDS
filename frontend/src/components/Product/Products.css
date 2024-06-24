@@ -1,0 +1,117 @@
+.productHeading{
+    text-align: center;
+    width: 20%;
+    margin: 2vmax auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+    padding: 1.5vmax;
+    color: rgba(0, 0, 0, 0.678);
+    font: 500 2vmax ;
+}
+
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.5vmax;
+    min-height: 30vh;
+}
+
+.paginationBox{
+    display: flex;
+    justify-content: center;
+}
+.paginationBox .page-item {
+    display: inline-block;
+    margin: 5px;
+}
+
+.paginationBox .page-link {
+    padding: 10px 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    color: #000;
+    transition: all 0.3s;
+    font: 300 1.2vmax ;
+}
+
+.paginationBox .page-link:hover {
+    background-color: #e9ecef;
+    color: #000;
+}
+
+.paginationBox .pageItemActive .page-link {
+    background-color: tomato;
+    color: white;
+}
+
+.paginationBox .pageItemActive .page-link:hover {
+    background-color: #eaecef;
+    color: black;
+}
+
+.filter-button{
+    /* position: absolute;
+    top:10vmax;
+    right: 8vmax; */
+    background-color: tomato;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+    background-color: rgb(197, 68, 45);
+    transform: scale(1.1);
+}
+.filter-button img{
+    width: 1.5vmax;
+    margin-bottom: 2px;
+}
+.filter-section{
+    display: flex;
+    justify-content: end;
+    /* margin-right: 8vmax; */
+}
+.price-section{
+    margin-right: 8vmax;
+}
+.category-section{
+    margin: 0vmax 1vmax;
+}
+/* .category-select {
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s;
+  } */
+  .category-select{
+    min-width: 20vmax;
+  }
+  .category-select:focus-visible {
+    border-color: tomato !important;
+  }
+  .category-select option {
+    padding: 10px; /* This won't have an effect in most browsers */
+    background-color: white;
+    color: black;
+  }
+  .noProduct {
+    font: 400 1.3vmax;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.548);
+    margin-top: 5vmax;
+  }
+  
+
+@media screen and (max-width: 600px) {
+    .productHeading{
+        width: 50%;
+    }
+
+}    

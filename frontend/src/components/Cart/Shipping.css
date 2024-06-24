@@ -1,0 +1,134 @@
+.shippingContainer{
+    padding: 2vmax;
+}
+.shippingHeader{
+    width: 80%;
+    margin: auto;
+}
+.shippingContainer > h2{
+    font-size:  2vmax;   
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    padding: 1.5vmax;
+    margin-bottom: 2.5vmax ;
+    color: rgba(0,0,0,0.6);
+}
+.shippingHeader > div{
+    display: flex;
+    justify-content: space-between;
+}
+.shippingHeader > div > div:first-child{
+    font: 400 1.5vmax;
+    color: darkslategrey;
+}
+.shippingHeader > div > div:last-child{
+    color: tomato;
+    cursor: pointer;
+    font: 400 1.2vmax;
+    transition: all 0.5s;
+}
+.shippingHeader > div > div:last-child:hover{
+    color: rgb(214, 84, 61);
+}
+.infoContainer{
+    width: 80%;
+    margin: 1.5vmax auto;
+    display: grid;
+    grid-template-columns: 0.4fr 4fr;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.infoContainer > div:first-child{
+    display: flex;
+    justify-content: center;
+}
+.infoContainer > div:last-child{
+    display: flex;
+    flex-direction: column;
+    padding: 1vmax;
+}
+.infoContainer > div:last-child > div> h4{
+    font: 400 1.6vmax;
+}
+.infoContainer > div:last-child > div >div > img{
+    height: 1.6vmax;
+    cursor: pointer;
+    margin-right: 0.5vmax;
+}
+.infoContainer > div:last-child > div{
+    display: flex;
+    justify-content: space-between;
+}
+.infoContainer > div:last-child > p{
+    margin: 0.2vmax;
+    font: 350 1.2vmax
+}
+.check-input{
+    width: 1.2vmax;
+    height: 1.2vmax;
+}
+input[type=radio]{
+    accent-color: #FF0000;
+}
+/* .check-input:checked{
+    background-color: tomato;
+} */
+.proceedBtn{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: end;
+}
+.proceedBtn > button{
+    border: none;
+    background-color: tomato;
+    padding: 0.5vmax;
+    width: 20%;
+    color: white;
+    transition: all 0.5s;
+    cursor: pointer;
+    border-radius: 4vmax;
+    font: 350 1.2vmax
+}
+.proceedBtn > button:hover{
+    background-color: rgb(214, 84, 61);
+}
+.emptyShippingContainer{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.emptyShippingContainer >div:first-child{
+    font: 450 3vmax;
+    color: rgba(0, 0, 0, 0.625)
+}
+.emptyShippingContainer >div:last-child{
+    font: 350 1.8vmax;
+    color:tomato;
+    margin-top: 2vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.emptyShippingContainer >div:last-child:hover{
+    color: rgb(214, 84, 61);
+}
+@media screen and (max-width: 600px) {
+    .infoContainer{
+        grid-template-columns: 1fr 4fr;
+    }
+    .form-check-input[type=radio]{
+        height: 0.7rem;
+        width: 0.7rem;
+    }
+    .shippingContainer > h2{
+        width: 70%;
+    }
+    .proceedBtn > button {
+        width: 35%;
+    }
+}

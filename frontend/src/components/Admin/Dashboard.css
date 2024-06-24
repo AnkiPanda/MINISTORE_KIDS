@@ -1,0 +1,20 @@
+/* .dashboard{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    margin: auto;
+    height: 70vh;
+    margin-bottom: 2vmax;
+} */
+.dashboardHeading{
+    text-align: center;
+    width: 20%;
+    margin: 2vmax auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+    padding: 1.5vmax;
+    color: rgba(0, 0, 0, 0.678);
+    font: 500 2vmax;
+}
+.dashboardContent{
+    margin-bottom: 2vmax;
+    margin-top: 2vmax;
+}

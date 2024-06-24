@@ -1,0 +1,64 @@
+.productDetailsHeader{
+    display: flex;
+    justify-content: end;
+}
+.productDetailsHeader> button{
+    border: none;
+    background-color: tomato;
+    padding: 0vmax;
+    width: 8%;
+    color: white;
+    transition: all 0.5s;
+    cursor: pointer;
+    border-radius: 4px;
+    font: 350 1.2vmax;
+    margin: 0 1vmax;
+    padding: 8px 0;
+   
+}
+.productDetailsHeader >button:hover{
+    background-color: rgb(214, 84, 61);
+  }
+.productDetailsHeader> button > svg{
+       font-size: 1.2vmax;
+}
+.productDetailsHeader >div{
+    width: 20%;
+}
+.productDetailsHeader >div > input{
+    padding: 0.5vmax;    
+    padding-left: 3vmax;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 4px;
+    font: 300 1.2vmax;
+    outline: none;
+    width: 100%;
+}
+.productDetailsHeader >div > svg {
+    position: absolute;
+    transform: translateX(1vmax) translateY(10px);
+    font-size: 1.3vmax;
+    color: rgba(0, 0, 0, 0.423);
+    
+}
+.reviewOpenBtn{
+    width: 120px;
+}
+@media screen and (max-width: 600px) {
+    .productDetailsHeader >div{
+        width: 52%;
+    }
+    .productDetailsHeader >div > svg {
+        font-size: 1.7vmax;
+    }
+    .productDetailsHeader> button{
+        width: 30%;
+    }
+    .productDetailsHeader> button > svg{
+        font-size: 2vmax;
+    }
+    .productDetailsHeader> button{
+        padding: 5px 0;
+    }
+}

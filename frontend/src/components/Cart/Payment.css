@@ -1,0 +1,7 @@
+.waitBox{
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: 500 2.5vmax;
+}

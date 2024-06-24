@@ -1,0 +1,21 @@
+.notAuthenticateDiv{
+    height: 80vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.notAuthenticateDiv > p{
+    font: 400 2.5vmax;
+    color:grey;
+}
+.notAuthenticateDiv > a{
+    color:tomato;
+    text-decoration: none;
+    font-size: 1.2vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.notAuthenticateDiv > a:hover{
+    color:rgb(197, 68, 45);
+}

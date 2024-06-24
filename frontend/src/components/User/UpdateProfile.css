@@ -1,0 +1,134 @@
+.updateProfileContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    max-width: 100%;
+    justify-content: center;
+    background-color: rgb(231, 231, 231);
+    align-items: center;
+    position: fixed;
+    top: 0%;
+    right: 0;
+    /* background-image: url('https://t3.ftcdn.net/jpg/02/90/57/16/360_F_290571619_jgMpok3GuZYPpxx0olC7lqUqmGVvvpLV.jpg');
+    background-size: cover; */
+}
+.updateProfileBox{
+    height: 70vh;
+    width: 25vmax;
+    background-color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(15,15,15,0.26);
+}
+.updateProfileHeading {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.664);
+    font-size: 1.5vmax ;
+    padding: 1.3vmax;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+    width: 50%;
+    margin: auto;
+  }
+  
+.updateProfileForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    height: 80%;
+    padding: 2vmax;
+}
+.updateProfileForm > div > input {
+    padding: 1vmax 4vmax;
+    padding-right: 1vmax;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 4px;
+    font: 300 1.2vmax ;
+    outline: none;
+  }
+  .updateProfileForm >div > img {
+    position: absolute;
+    transform: translateX(10px)translateY(2px);
+    /* font-size: 1.6vmax; */
+    color: rgba(0, 0, 0, 0.623);
+    width: 1.5vmax;
+    margin-top: 1.2vmax;
+  }
+   .updateProfileName, .updateProfileEmail {
+    width: 100%;
+    }
+    .updateProfileBtn {
+        border: none;
+        background-color: tomato;
+        font: 500 1.2vmax ;
+        padding: 0.6vmax 2vmax;
+        margin: 1vmax 0;
+        color: white;
+        cursor: pointer;
+        transition: all 0.5s;
+        outline: none;
+        width: 100%;
+    }
+    .updateProfileBtn:hover {
+        background-color: rgb(197, 68, 45);
+        /* transform: scale(1.1); */
+    }
+    #updateProfileImage > img {
+        width: 2.5vmax;
+        height: 2.5vmax;
+        border-radius: 100%;
+        margin-top: 0vmax; 
+    }
+    #updateProfileImage > input {
+        display: flex;
+        padding: 0%;
+        margin-left: 4vmax;
+        width: 80%;
+        
+    }
+    #updateProfileImage > input::file-selector-button {
+        cursor: pointer;
+        width: 100%;
+        z-index: 2;
+        height: 5vh;
+        border: none;
+        margin: 0%;
+        font: 400 1.2vmax ;
+        transition: all 0.5s;
+        padding: 0 1vmax;
+        color: rgba(0, 0, 0, 0.623);
+        background-color: rgb(255, 255, 255); 
+    }
+    #updateProfileImage > input::file-selector-button:hover {
+        background-color: rgb(235, 235, 235);
+    }
+
+    @media screen and (max-width: 600px) {
+        .updateProfileContainer {
+            background-color: white;
+            width: 104vw;
+            background-image: none;
+        }
+        .updateProfileBox {
+            width: 100vw;
+            box-shadow: none;
+            margin-top: 10vmax;
+        }
+        .updateProfileForm >div > img {
+            width: 2vmax;
+        }
+        #updateProfileImage > img {
+            width: 4.5vmax;
+            height: 4.5vmax;
+        }
+        .updateProfileHeading {
+            font-size: 2.5vmax;
+        }
+        #updateProfileImage > input {
+            margin-left: 7vmax;
+        }
+       
+    }

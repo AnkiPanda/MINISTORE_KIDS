@@ -1,0 +1,164 @@
+.cartPage{
+    padding: 5vmax;
+}
+.cartHeader{
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    width: 90%;
+    margin: auto;
+    background: tomato;
+    color: #fff;
+    /* box-sizing: border-box;
+    margin: auto; */
+    font: 400 1.2vmax "Roboto";
+}
+.cartHeader p{
+    margin: 1vmax;
+}
+/* .cartHeader > p:last-child {
+    text-align: center;
+} */
+.cartHeader > p:nth-child(2){
+    text-align: start;
+}
+.cartHeader > p:nth-child(3){
+    text-align: end;
+}
+.cartContainer{
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    width: 90%;
+    margin: auto;
+    transition: all 0.5s;
+}
+/* .cartContainer:hover{
+    box-shadow: 0 0 5px rgba(15,15,15,0.26);
+    
+} */
+.cartInput{
+    display: flex;
+    align-items: center;
+    height: 8vmax;
+    padding: 1vmax;
+}
+.cartInput > button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.616);
+    padding: 0.3vmax 0.6vmax;
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s;
+  }
+  .cartInput > button:hover {
+    background-color: rgba(0, 0, 0, 0.767);
+  }
+  
+  .cartInput > input {
+    border: none;
+    padding: 0.5vmax;
+    width: 2.5vmax;
+    text-align: center;
+    outline: none;
+    font: 400 1.2vmax "Roboto";
+    color: rgba(0, 0, 0, 0.74);
+  }
+  .cartSubtotal {
+    display: flex;
+    padding: 0.5vmax;
+    height: 8vmax;
+    align-items: center;
+    box-sizing: border-box;
+    font: 300 1.5vmax cursive;
+    justify-content: flex-end;
+    color: rgba(0, 0, 0, 0.753);
+  }
+  .cartGrossProfit{
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+  }
+  .cartGrossProfitBox{
+    border-top: 0.2vmax solid tomato;
+    margin-right: 3.2vmax;
+    padding: 1vmax;
+    display: flex;
+    justify-content: space-between;
+    font: 500 1.5vmax "Roboto";
+  }
+  .checkOutBtn{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 3vmax ;
+  }
+  .checkOutBtn >button{
+    border: none;
+    background-color: tomato;
+    padding: 0.5vmax;
+    width: 40%;
+    color: white;
+    transition: all 0.5s;
+    cursor: pointer;
+    border-radius: 4vmax;
+    font: 350 1.2vmax "Roboto"
+  }
+  .checkOutBtn >button:hover{
+    background-color: rgb(214, 84, 61);
+  }
+  .emptyCart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+  }
+  .emptyCart > img{
+    width: 12vmax;
+  }
+  .emptyCart > p{
+    margin: 1vmax;
+    font: 500 1.8vmax cursive;
+  }
+  .emptyCart > a{
+    text-decoration: none;
+    color: tomato;
+    font: 400 1.3vmax "Roboto";
+    cursor:pointer;
+    transition: all 0.5s;
+  }
+  .emptyCart > a:hover{
+    color: rgb(214, 84, 61);
+  }
+
+  @media screen and (max-width: 600px) {
+    .cartPage{
+        padding: 1vmax;
+        min-height: 75vh;
+    }
+    .cartHeader{
+        width: 100%;
+        font-size: 1.7vmax;
+    }
+    .cartGrossProfitBox{
+        margin-right: 0.5vmax ;
+    }
+    .checkOutBtn{
+        margin-right: 0.5vmax ;
+    }
+    .checkOutBtn >button{
+        width: 100%;
+    }
+    .cartSubtotal {
+        padding: 0vmax;
+        font-size: 1.6vmax;
+    }
+    .emptyCart > p{
+        font-size: 2.5vmax;
+    }
+    .emptyCart > a{
+        font-size: 2vmax;
+    }
+    .cartInput > input {
+      font-size: 1.6vmax;
+    }
+    
+  }
+  

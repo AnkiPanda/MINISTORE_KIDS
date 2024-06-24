@@ -1,0 +1,138 @@
+.banner{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.banner p{
+    margin: auto;
+}
+
+.banner a{
+    margin: auto;
+}
+
+.banner h1{
+    margin: auto;
+}
+
+.banner > a > button > img{
+    width: 25px;
+}
+.carousel-item img {
+    height: calc(100vh - 300px);
+}
+.homeHeading{
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    width: 20%;
+    margin: 40px auto;
+    padding: 15px;
+    
+}
+
+.featuredProduct{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.5vmax;
+    min-height: 30vh;
+}
+
+/* .productCard{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    cursor: pointer;
+    transition: all 0.5s;
+    padding-bottom: 10px;
+    box-shadow: 0 0 5px rgba(15,15,15,0.26);
+} */
+.productCard {
+    width: 18vmax;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: rgb(48, 48, 48);
+    margin: 2vmax;
+    transition: all 0.5s;
+    padding-bottom: 0.5vmax;
+  }
+  
+
+.productCard > div{ 
+    display: flex;
+    margin-left: 2px;
+}
+
+.productCard > p{
+    margin-bottom: 2px;
+    font-size: 20px;
+    margin-left: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.productCard > span{
+    color: tomato;
+    margin-left: 5px;
+}
+
+
+
+.productCard:hover{
+    box-shadow: 0 0 5px rgba(15,15,15,0.26);
+    transform: translateY(-1vmax);
+}
+.carousel-control-next, .carousel-control-prev {
+    height: 15% !important;
+    background-color: black !important;
+    margin: auto;
+    width: 3% !important;
+}
+.carousel-indicators [data-bs-target] {
+    background-color: black !important;
+}
+
+@media screen and (max-width: 600px) {
+    .homeHeading{
+        width: 80%;
+    }
+    .productCard > p {
+        font-size: 1.7vmax;
+        
+      }
+    
+      .productCard > div {
+        margin: 0vmax;
+        flex-direction: column;
+      }
+    
+      .productCard > span {
+        font-size: 1.5vmax;
+      }
+    
+      .productCard > div > span {
+        margin: 0 0.5vmax !important;
+        font: 400 1.5vmax;
+      }
+      .banner{
+        height: 18vh;
+      }
+      .carousel-item img {
+        height: auto;
+      }
+      .carousel-control-next, .carousel-control-prev {
+        width: 6% !important;
+        height: 25% !important;
+      }
+
+}

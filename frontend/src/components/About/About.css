@@ -1,0 +1,39 @@
+.aboutHeading {
+    text-align: center;
+    width: 20%;
+    margin: auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+    padding: 1.5vmax;
+    color: rgba(0, 0, 0, 0.678);
+    font: 500 2.4vmax;
+}
+.story-lines{
+    margin: 5vmax 10vmax;
+}
+.img-view{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 2vmax;
+}
+.img-view > button > a{
+    text-decoration: none;
+    color: #000;
+}
+.img-view > button > a > svg{
+    margin-right: 4px;
+}
+.img-view >img{
+    width: 15vmax;
+    border-radius: 100%;
+    margin-bottom: 2vmax;
+}
+@media screen and (max-width: 600px) {
+    .aboutHeading{
+        width:40%;
+    }
+    .img-view >img{
+        width: 20vmax;
+    }
+}

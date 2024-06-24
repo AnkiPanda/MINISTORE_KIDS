@@ -1,0 +1,76 @@
+modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content-order-edit {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    width: 30%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 3vmax ;
+    
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    color: tomato;
+    border: none;
+    font-size: 1.3vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+    width:2vmax
+}
+.close-button:hover{
+    color: rgb(214, 84, 61);
+}
+.updateOrderStatusForm{
+    padding: 2vmax;
+    padding-top: 3vmax;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.updateOrderStatusForm > div > label{
+    margin-bottom: 1vmax;
+    font: 400 1.2vmax "Roboto";
+    color: rgba(0, 0, 0, 0.6);
+}
+.updateOrderStatusBtn{
+    border: none;
+    background-color: tomato;
+    font: 500 1.2vmax;
+    padding: 0.3vmax 2vmax;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+    outline: none;
+    margin-top: 1vmax;
+      
+}
+.updateOrderStatusBtn:hover{
+    background-color: rgb(214, 84, 61);
+}
+@media screen and (max-width: 600px) {
+    .modal-content-order-edit {
+        width: 90%;
+    }
+    .updateOrderStatusForm > div > label{
+        font-size: 2vmax;
+    }
+    .updateOrderStatusForm > div > div{
+        margin: 15px 0;
+    }
+}
