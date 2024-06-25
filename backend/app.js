@@ -8,6 +8,8 @@ const fileUpload = require('express-fileupload')
 // require('./passportConfig'); // Adjust the path as necessary
 const path = require('path');
 const cors = require('cors')
+app.use(cors());
+
 
 const errorMiddleware = require("./middleware/error")
 
@@ -64,7 +66,6 @@ app.use("/api/v1",order)
 app.use("/api/v1",shippingInfo)
 app.use("/api/v1",payment)
 
-app.use(cors());
 
 // app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
