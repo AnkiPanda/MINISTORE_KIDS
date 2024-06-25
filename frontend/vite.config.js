@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => {
       } : {},
     },
     build: {
-      outDir: 'dist-new',
+      outDir: 'dist'
     },
     define: {
       'process.env.NODE_ENV': JSON.stringify(mode)
