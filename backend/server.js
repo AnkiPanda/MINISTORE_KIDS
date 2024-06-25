@@ -31,9 +31,9 @@ const razorpayInstance = new Razorpay({
 
 exports.razorpayInstance = razorpayInstance;
 
-const server = app.listen(process.env.PORT,()=>{
-    console.log(`Server is working on http://localhost:${process.env.PORT}`)
-})
+// const server = app.listen(process.env.PORT,()=>{
+//     console.log(`Server is working on http://localhost:${process.env.PORT}`)
+// })
 
 // Unhandled Promise Rejections
 process.on("unhandledRejection",(err)=>{
@@ -44,4 +44,4 @@ process.on("unhandledRejection",(err)=>{
     })
 })
 
-module.exports = server;
+module.exports = app;
