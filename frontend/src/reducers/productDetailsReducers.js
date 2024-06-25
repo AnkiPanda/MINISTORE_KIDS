@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
+import baseUrl from "../baseurl";
 
 // Define the thunk action creator using createAsyncThunk
 export const fetchProductDetails = createAsyncThunk(
   'product/fetchProductDetails', // Action type prefix
   async (id, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`/api/v1/product/${id}`);
+      const response = await axios.get(`${baseUrl}/api/v1/product/${id}`);
       return response.data; // Return data on success
     } catch (error) {
       // Use rejectWithValue to send a custom error payload

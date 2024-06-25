@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
+import baseUrl from "../baseurl";
 
 // Define the thunk action creator using createAsyncThunk
 export const updateProfile = createAsyncThunk(
@@ -7,7 +8,7 @@ export const updateProfile = createAsyncThunk(
     async (userData, { rejectWithValue }) => {
       try {
         const config = { headers: { "Content-Type": "multipart/form-data" }};
-        const response = await axios.put(`/api/v1/me/update`, userData, config);
+        const response = await axios.put(`${baseUrl}/api/v1/me/update`, userData, config);
         return response.data; // Return data on success
       } catch (error) {
         return rejectWithValue(error.response.data);
@@ -20,7 +21,7 @@ export const updatePassword = createAsyncThunk(
   async (passwords, { rejectWithValue }) => {
     try {
       const config = { headers: { "Content-Type": "application/json" }};
-      const response = await axios.put(`/api/v1/password/update`, passwords, config);
+      const response = await axios.put(`${baseUrl}/api/v1/password/update`, passwords, config);
       return response.data; // Return data on success
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -35,7 +36,7 @@ export const updateRole = createAsyncThunk(
     try {
       
       const config = { headers: { "Content-Type": "application/json" }};
-      const response = await axios.put(`/api/v1/admin/user/${id}`, userData, config);
+      const response = await axios.put(`${baseUrl}/api/v1/admin/user/${id}`, userData, config);
       return response.data; // Return data on success
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -49,7 +50,7 @@ export const deleteUser = createAsyncThunk(
   'profile/deleteUser', // Action type prefix
   async (id, { rejectWithValue }) => {
     try {
-      const response = await axios.delete(`/api/v1/admin/user/${id}`);
+      const response = await axios.delete(`${baseUrl}/api/v1/admin/user/${id}`);
       return response.data; // Return data on success
     } catch (error) {
       return rejectWithValue(error.response.data);

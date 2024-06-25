@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
+import baseUrl from "../baseurl";
 
 export const forgotPasswordFunc = createAsyncThunk(
     'forgotPassword/forgotPasswordFunc', // Action type prefix
     async (email, { rejectWithValue }) => {
       try {
         const config = { headers: { "Content-Type": "application/json" }};
-        const response = await axios.post(`/api/v1/password/forgot`, email, config);
+        const response = await axios.post(`${baseUrl}/api/v1/password/forgot`, email, config);
         return response.data; // Return data on success
       } catch (error) {
         return rejectWithValue(error.response.data);
@@ -18,7 +19,7 @@ export const forgotPasswordFunc = createAsyncThunk(
     async ({token, passwords}, { rejectWithValue }) => {
       try {
         const config = { headers: { "Content-Type": "application/json" }};
-        const response = await axios.put(`/api/v1/password/reset/${token}`, passwords, config);
+        const response = await axios.put(`${baseUrl}/api/v1/password/reset/${token}`, passwords, config);
         return response.data; // Return data on success
       } catch (error) {
         return rejectWithValue(error.response.data);

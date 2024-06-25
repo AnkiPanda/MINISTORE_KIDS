@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import baseUrl from "../baseurl";
 
 export const addNewReview = createAsyncThunk(
     "review/addNewReview",
     async(reviewData, { rejectWithValue })=>{
         try {
             const config = { headers: { "Content-Type": "application/json" }};
-            const response = await axios.put(`/api/v1/review`, reviewData, config);
+            const response = await axios.put(`${baseUrl}/api/v1/review`, reviewData, config);
             return response.data; // Return data on success
           } catch (error) {
             return rejectWithValue(error.response.data);
@@ -18,7 +19,7 @@ export const deleteReview = createAsyncThunk(
   "review/deleteReview",
   async ({ reviewId, productId }, { rejectWithValue }) => {
     try {
-      const response = await axios.delete(`/api/v1/reviews?productId=${productId}&id=${reviewId}`);
+      const response = await axios.delete(`${baseUrl}/api/v1/reviews?productId=${productId}&id=${reviewId}`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response ? error.response.data : { message: error.message });
@@ -30,7 +31,7 @@ export const getAllReviews = createAsyncThunk(
   "review/getAllReviews",
   async(productId, { rejectWithValue })=>{
     try {
-      const response = await axios.get(`/api/v1/reviews?id=${productId}`);
+      const response = await axios.get(`${baseUrl}/api/v1/reviews?id=${productId}`);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response ? error.response.data : { message: error.message });

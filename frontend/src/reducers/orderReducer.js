@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import baseUrl from "../baseurl";
 
 export const createOrder = createAsyncThunk(
     "order/createOrder",
     async(order,{rejectWithValue})=>{
         try {
             const config = { headers: { "Content-Type": "application/json" }};
-            const response = await axios.post(`/api/v1/order/new`,order,config);
+            const response = await axios.post(`${baseUrl}/api/v1/order/new`,order,config);
             return response.data; // Return data on success
           } catch (error) {
             // Use rejectWithValue to send a custom error payload
@@ -19,7 +20,7 @@ export const fetchMyOrders = createAsyncThunk(
     'order/fetchMyOrders', // Action type prefix
     async (_, { rejectWithValue }) => {
         try {
-        const response = await axios.get(`/api/v1/orders/me`);
+        const response = await axios.get(`${baseUrl}/api/v1/orders/me`);
         return response.data; 
         
         // Return data on success
@@ -36,7 +37,7 @@ export const fetchMyOrders = createAsyncThunk(
     'order/fetchAllOrdersForAdmin', // Action type prefix
     async (_, { rejectWithValue }) => {
         try {
-        const response = await axios.get(`/api/v1/admin/orders`);
+        const response = await axios.get(`${baseUrl}/api/v1/admin/orders`);
         return response.data; 
         
         // Return data on success
@@ -55,7 +56,7 @@ export const fetchMyOrders = createAsyncThunk(
     async({id,status},{rejectWithValue})=>{
         try {
             const config = { headers: { "Content-Type": "application/json" }};
-            const response = await axios.put(`/api/v1/admin/order/${id}`,{status},config);
+            const response = await axios.put(`${baseUrl}/api/v1/admin/order/${id}`,{status},config);
             return response.data; // Return data on success
           } catch (error) {
             // Use rejectWithValue to send a custom error payload
@@ -69,7 +70,7 @@ export const fetchMyOrders = createAsyncThunk(
     "order/deleteOrder",
     async(id,{rejectWithValue})=>{
         try {
-            const response = await axios.delete(`/api/v1/admin/order/${id}`);
+            const response = await axios.delete(`${baseUrl}/api/v1/admin/order/${id}`);
             return response.data; // Return data on success
           } catch (error) {
             // Use rejectWithValue to send a custom error payload

@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
+import baseUrl from "../baseurl";
 
 export const addShippingInfo = createAsyncThunk(
     'shipping/addShippingInfo', // Action type prefix
     async (shippingDetails, { rejectWithValue }) => {
         try {
         const config = { headers: { "Content-Type": "application/json" }};
-        const response = await axios.post(`/api/v1/shipping/add`, shippingDetails, config);
+        const response = await axios.post(`${baseUrl}/api/v1/shipping/add`, shippingDetails, config);
         return response.data; 
         
         // Return data on success
@@ -22,7 +23,7 @@ export const getShippingInfo = createAsyncThunk(
     "shipping/getShippingInfo",
     async(_, { rejectWithValue })=>{
         try {
-            const response = await axios.get('/api/v1/shipping/me')
+            const response = await axios.get('${baseUrl}/api/v1/shipping/me')
             return response.data
             
         } catch (error) {
@@ -37,7 +38,7 @@ export const deleteShippingInfo = createAsyncThunk(
         try {
             
             const config = { headers: { "Content-Type": "application/json" }};
-            const response = await axios.delete(`/api/v1/shipping/delete/${id}` , config);
+            const response = await axios.delete(`${baseUrl}/api/v1/shipping/delete/${id}` , config);
             return response.data; 
             
         } catch (error) {
@@ -51,7 +52,7 @@ export const updateShippingInfo = createAsyncThunk(
     async ({id, shippingDetails}, { rejectWithValue }) => {
         try {
         const config = { headers: { "Content-Type": "application/json" }};
-        const response = await axios.put(`/api/v1/shipping/update/${id}`, shippingDetails, config);
+        const response = await axios.put(`${baseUrl}/api/v1/shipping/update/${id}`, shippingDetails, config);
         return response.data; 
         
         // Return data on success

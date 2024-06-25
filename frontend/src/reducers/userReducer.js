@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
+import baseUrl from "../baseurl";
 
 // Define the thunk action creator using createAsyncThunk
 export const loginUser = createAsyncThunk(
@@ -7,7 +8,7 @@ export const loginUser = createAsyncThunk(
   async ({email, password}, { rejectWithValue }) => {
     try {
     const config = { headers: { "Content-Type" : "application/json"}}
-      const response = await axios.post(`/api/v1/login`, { email, password }, config);
+      const response = await axios.post(`${baseUrl}/api/v1/login`, { email, password }, config);
       return response.data; // Return data on success
     } catch (error) {
       // Use rejectWithValue to send a custom error payload
@@ -21,7 +22,7 @@ export const registerUser = createAsyncThunk(
     async (userData, { rejectWithValue }) => {
       try {
         const config = { headers: { "Content-Type": "multipart/form-data" }};
-        const response = await axios.post(`/api/v1/register`, userData, config);
+        const response = await axios.post(`${baseUrl}/api/v1/register`, userData, config);
         return response.data; // Return data on success
       } catch (error) {
         return rejectWithValue(error.response.data);
@@ -33,7 +34,7 @@ export const loadUser = createAsyncThunk(
     'user/loadUser', // Action type prefix
     async (_, { rejectWithValue }) => {
       try {
-        const response = await axios.get(`/api/v1/me`);
+        const response = await axios.get(`${baseUrl}/api/v1/me`);
         return response.data; // Return data on success
       } catch (error) {
         return rejectWithValue(error.response.data);
@@ -45,7 +46,7 @@ export const logoutUser = createAsyncThunk(
   'user/logoutUser', // Action type prefix
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`/api/v1/logout`);
+      const response = await axios.get(`${baseUrl}/api/v1/logout`);
       return response.data; // Return data on success
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -57,7 +58,7 @@ export const getAllUsersForAdmin = createAsyncThunk(
   'user/getAllUsersForAdmin', // Action type prefix
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`/api/v1/admin/users`);
+      const response = await axios.get(`${baseUrl}/api/v1/admin/users`);
       return response.data; // Return data on success
     } catch (error) {
       return rejectWithValue(error.response.data);

@@ -1,14 +1,15 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
+import baseUrl from "../baseurl";
 
 // Define the thunk action creator using createAsyncThunk
 export const fetchProducts = createAsyncThunk(
   'product/fetchProducts', // Action type prefix
   async ({ keyword = "", currentPage = 1 , price=[0,50000], category,ratings=[0,5]}, { rejectWithValue }) => {
     try {
-      let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings[0]}&ratings[lte]=${ratings[1]}`
+      let link = `${baseUrl}/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings[0]}&ratings[lte]=${ratings[1]}`
       if(category){
-        link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings[0]}&ratings[lte]=${ratings[1]}&category=${category}`
+        link = `${baseUrl}/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings[0]}&ratings[lte]=${ratings[1]}&category=${category}`
    
       }
       const response = await axios.get(link);
@@ -24,7 +25,7 @@ export const fetchAllProductsForAdmin = createAsyncThunk(
   "product/fetchAllProducts",
   async(_, { rejectWithValue })=>{
     try {
-      const response = await axios.get("/api/v1/admin/products");
+      const response = await axios.get(`${baseUrl}/api/v1/admin/products`);
       return response.data;
     } catch (error) {
       
@@ -36,7 +37,7 @@ export const createNewProduct = createAsyncThunk(
   async (productData, { rejectWithValue }) => {
     try {
       const config = { headers: { "Content-Type": "multipart/form-data" }};
-      const response = await axios.post(`/api/v1/admin/product/new`, productData, config);
+      const response = await axios.post(`${baseUrl}/api/v1/admin/product/new`, productData, config);
       return response.data; // Return data on success
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -49,7 +50,7 @@ export const updateProduct = createAsyncThunk(
   async ({id, productData}, { rejectWithValue }) => {
     try {
       const config = { headers: { "Content-Type": "multipart/form-data" }};
-      const response = await axios.put(`/api/v1/admin/product/${id}`, productData, config);
+      const response = await axios.put(`${baseUrl}/api/v1/admin/product/${id}`, productData, config);
       return response.data; // Return data on success
     } catch (error) {
       return rejectWithValue(error.response.data);
@@ -60,7 +61,7 @@ export const deleteProduct = createAsyncThunk(
   'prodcut/deleteProduct', // Action type prefix
   async (id, { rejectWithValue }) => {
     try {
-      const response = await axios.delete(`/api/v1/admin/product/${id}`);
+      const response = await axios.delete(`${baseUrl}/api/v1/admin/product/${id}`);
       return response.data; // Return data on success
     } catch (error) {
       return rejectWithValue(error.response.data);

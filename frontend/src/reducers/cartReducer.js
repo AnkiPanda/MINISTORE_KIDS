@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from 'axios';
+import baseUrl from "../baseurl";
 
 export const addToCart = createAsyncThunk(
     'cart/addToCart', // Action type prefix
@@ -10,7 +11,7 @@ export const addToCart = createAsyncThunk(
             quantity
         }
         const config = { headers: { "Content-Type": "application/json" }};
-        const response = await axios.put(`/api/v1/cart/add`, cartItem, config);
+        const response = await axios.put(`${baseUrl}/api/v1/cart/add`, cartItem, config);
         return response.data; 
         
         // Return data on success
@@ -26,7 +27,7 @@ export const loadCart = createAsyncThunk(
   'cart/loadCart', // Action type prefix
   async (_, { rejectWithValue }) => {
       try {
-      const response = await axios.get(`/api/v1/cart/me`);
+      const response = await axios.get(`${baseUrl}/api/v1/cart/me`);
       return response.data; 
       
       // Return data on success
@@ -45,7 +46,7 @@ export const removeItemFromCart = createAsyncThunk(
           product : id
       }
       const config = { headers: { "Content-Type": "application/json" }};
-      const response = await axios.put(`/api/v1/cart/delete`, cartItem, config);
+      const response = await axios.put(`${baseUrl}/api/v1/cart/delete`, cartItem, config);
       return response.data; 
       
       // Return data on success
@@ -61,7 +62,7 @@ export const removeAllCartItems = createAsyncThunk(
   'cart/removeAllCartItems',
   async(_,{rejectWithValue})=>{
     try {
-      const response = await axios.put(`/api/v1/cart/remove`)
+      const response = await axios.put(`${baseUrl}/api/v1/cart/remove`)
       return response.data; 
     } catch (error) {
       return rejectWithValue(error.response.data);
