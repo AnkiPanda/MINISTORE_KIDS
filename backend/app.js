@@ -66,10 +66,10 @@ app.use("/api/v1",payment)
 
 app.use(cors());
 
-app.use(express.static(path.join(__dirname, "../frontend/dist-new")));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/dist-new/index.html"));
+  res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html"));
 });
 
 
