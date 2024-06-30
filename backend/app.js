@@ -13,7 +13,10 @@ const cors = require('cors')
 //   credentials: true // Allow credentials (cookies)
 // };
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://ministore-frontend-pied.vercel.app', // Replace with your frontend domain
+  credentials: true
+}));
 
 
 const errorMiddleware = require("./middleware/error")
