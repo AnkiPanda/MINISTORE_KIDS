@@ -23,7 +23,7 @@ export const getShippingInfo = createAsyncThunk(
     "shipping/getShippingInfo",
     async(_, { rejectWithValue })=>{
         try {
-            const response = await axios.get('${baseUrl}/api/v1/shipping/me')
+            const response = await axios.get(`${baseUrl}/api/v1/shipping/me`)
             return response.data
             
         } catch (error) {

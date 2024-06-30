@@ -32,11 +32,11 @@ import NotFound from './components/NotFound/NotFound.jsx';
 
 function App() {
 
-  //  const {isAuthenticated,user} = useSelector(state=>state.user)
+   const {isAuthenticated,user} = useSelector(state=>state.user)
 
-  // useEffect(() => {
-  //   store.dispatch(loadUser())
-  // }, [])
+  useEffect(() => {
+    store.dispatch(loadUser())
+  }, [])
   
   
   

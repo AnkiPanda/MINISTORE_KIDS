@@ -8,6 +8,11 @@ const fileUpload = require('express-fileupload')
 // require('./passportConfig'); // Adjust the path as necessary
 const path = require('path');
 const cors = require('cors')
+// const corsOptions = {
+//   origin: true, // Change this to your frontend URL in production
+//   credentials: true // Allow credentials (cookies)
+// };
+
 app.use(cors());
 
 
@@ -32,7 +37,12 @@ app.use(fileUpload({
     limits: { fileSize: 10 * 1024 * 1024 }, // 10 MB limit
 }));
 
-
+// Debugging middleware
+app.use((req, res, next) => {
+  console.log('Request Headers:', req.headers); // Log all request headers
+  console.log('Cookies:', req.cookies); // Log cookies
+  next();
+});
   
 
 const dotenv = require('dotenv')

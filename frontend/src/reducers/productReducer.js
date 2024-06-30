@@ -28,7 +28,7 @@ export const fetchAllProductsForAdmin = createAsyncThunk(
       const response = await axios.get(`${baseUrl}/api/v1/admin/products`);
       return response.data;
     } catch (error) {
-      
+      return rejectWithValue(error.response.data);
     }
   }
 )
